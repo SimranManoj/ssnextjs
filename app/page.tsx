@@ -39,7 +39,7 @@ export default function Home() {
         </div>
 
         <div className="feature-box">
-          <h3>🗺️ Career Path Roadmaps</h3>
+          <h3>🗺 Career Path Roadmaps</h3>
           <p>Explore various career journeys and required skills in AI.</p>
           <Link href="#">View Roadmaps</Link>
         </div>
@@ -61,6 +61,44 @@ export default function Home() {
           <p>Receive alerts about new courses, skills, and job matches.</p>
           <button>Enable Notifications</button>
         </div>
+
+        <div className="feature-box">
+          <h3>🏆 Gamified Learning</h3>
+          <p>Earn badges and climb levels as you learn new skills!</p>
+          <Link href="#">View Achievements</Link>
+        </div>
+
+        <div className="feature-box">
+          <h3>🧑‍🤝‍🧑 Community Forum</h3>
+          <p>Ask questions, share insights, and connect with fellow learners.</p>
+          <Link href="#">Join the Forum</Link>
+        </div>
+
+        <div className="feature-box">
+          <h3>📈 Learning Progress Tracker</h3>
+          <p>Track which topics you've mastered and what's next.</p>
+          <Link href="#">Track Progress</Link>
+        </div>
+
+        {/* New Features Added Below */}
+
+        <div className="feature-box">
+          <h3>🧩 Personalized Learning Paths</h3>
+          <p>Follow curated learning paths tailored to your goals.</p>
+          <Link href="#">Explore Paths</Link>
+        </div>
+
+        <div className="feature-box">
+          <h3>📝 AI Resume Builder</h3>
+          <p>Create a professional resume based on your skills and experience.</p>
+          <button>Build Resume</button>
+        </div>
+
+        <div className="feature-box">
+          <h3>📊 Job Match Analyzer</h3>
+          <p>Compare your skills with job listings to find the best matches.</p>
+          <Link href="#">Analyze Jobs</Link>
+        </div>
       </section>
 
       <section className="contact-section">
@@ -79,3 +117,6 @@ export default function Home() {
     </main>
   );
 }
+
+
+        
