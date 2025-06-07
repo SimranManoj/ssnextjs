@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main>
@@ -16,24 +18,48 @@ export default function Home() {
         <p>
           Identify your skill gaps and find the best learning resources to grow in the AI field.
         </p>
-        <img src="/ai-learning.jpg" alt="AI Learning" className="banner-image" />
+        <Image src="/ai-learning.jpg" alt="AI Learning" width={800} height={400} className="banner-image" />
 
         <div className="feature-box">
-          <h3>🔍 Skill Mapping</h3>
-          <p>Analyze your current skills and get personalized feedback.</p>
-          <a href="#">Try Skill Mapping</a>
+          <h3>🔐 User Login & Dashboard</h3>
+          <p>Sign in to track your progress and access personalized tools.</p>
+          <Link href="#">Go to Dashboard</Link>
         </div>
 
         <div className="feature-box">
-          <h3>📚 Course Recommendation</h3>
-          <p>Find the best AI courses based on your skill profile.</p>
-          <button>View Courses</button>
+          <h3>🧠 Skill Gap Analyzer</h3>
+          <p>Take our quiz to identify where you need to improve.</p>
+          <Link href="#">Start Quiz</Link>
         </div>
 
         <div className="feature-box">
-          <h3>📊 Startup Ecosystem Dashboard</h3>
-          <p>Explore trending startups and required skills in the AI industry.</p>
-          <a href="#">Visit Dashboard</a>
+          <h3>🤖 AI-Powered Course Recommendation</h3>
+          <p>Get smart recommendations based on your unique profile.</p>
+          <button>View Recommendations</button>
+        </div>
+
+        <div className="feature-box">
+          <h3>🗺️ Career Path Roadmaps</h3>
+          <p>Explore various career journeys and required skills in AI.</p>
+          <Link href="#">View Roadmaps</Link>
+        </div>
+
+        <div className="feature-box">
+          <h3>🚀 Startup Finder by Skills</h3>
+          <p>Find real startups that need your skillset.</p>
+          <Link href="#">Explore Startups</Link>
+        </div>
+
+        <div className="feature-box">
+          <h3>📅 Upcoming Events & Hackathons</h3>
+          <p>Never miss an opportunity to network and grow.</p>
+          <Link href="#">View Events</Link>
+        </div>
+
+        <div className="feature-box">
+          <h3>🔔 Notification / Alert System</h3>
+          <p>Receive alerts about new courses, skills, and job matches.</p>
+          <button>Enable Notifications</button>
         </div>
       </section>
 
