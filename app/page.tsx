@@ -1,122 +1,41 @@
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+
+const SearchBox = () => {
+  return (
+    <div className="mb-6">
+      <input
+        type="text"
+        placeholder="Search skills or courses"
+        className="p-3 w-full border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+    </div>
+  );
+};
+
+const SkillCard = ({ skill, description }: { skill: string; description: string }) => {
+  return (
+    <div className="p-4 bg-white rounded-2xl shadow-md border hover:shadow-lg transition">
+      <h2 className="text-xl font-semibold">{skill}</h2>
+      <p className="text-gray-600">{description}</p>
+    </div>
+  );
+};
 
 export default function Home() {
   return (
-    <main>
-      <header className="header">
-        <h1>SkillSync</h1>
-        <p>Skill Mapping & Learning App</p>
-        <div className="search-box">
-          <input type="text" placeholder="🔍 Search apps or courses..." />
-          <button>Search</button>
-        </div>
+    <main className="min-h-screen bg-gray-100 p-6 font-sans">
+      <header className="text-center mb-10">
+        <h1 className="text-4xl font-bold text-blue-600">SkillSync</h1>
+        <p className="text-lg text-gray-600">Skill Mapping & Learning App</p>
       </header>
 
-      <section className="main-section">
-        <h2>Welcome to SkillSync!</h2>
-        <p>
-          Identify your skill gaps and find the best learning resources to grow in the AI field.
-        </p>
-        <Image src="/ai-learning.jpg" alt="AI Learning" width={800} height={400} className="banner-image" />
-
-        <div className="feature-box">
-          <h3>🔐 User Login & Dashboard</h3>
-          <p>Sign in to track your progress and access personalized tools.</p>
-          <Link href="#">Go to Dashboard</Link>
+      <div className="max-w-2xl mx-auto">
+        <SearchBox />
+        <div className="grid gap-4">
+          <SkillCard skill="React" description="A JavaScript library for building user interfaces." />
+          <SkillCard skill="Python" description="Popular language for AI, ML, and web development." />
         </div>
-
-        <div className="feature-box">
-          <h3>🧠 Skill Gap Analyzer</h3>
-          <p>Take our quiz to identify where you need to improve.</p>
-          <Link href="#">Start Quiz</Link>
-        </div>
-
-        <div className="feature-box">
-          <h3>🤖 AI-Powered Course Recommendation</h3>
-          <p>Get smart recommendations based on your unique profile.</p>
-          <button>View Recommendations</button>
-        </div>
-
-        <div className="feature-box">
-          <h3>🗺 Career Path Roadmaps</h3>
-          <p>Explore various career journeys and required skills in AI.</p>
-          <Link href="#">View Roadmaps</Link>
-        </div>
-
-        <div className="feature-box">
-          <h3>🚀 Startup Finder by Skills</h3>
-          <p>Find real startups that need your skillset.</p>
-          <Link href="#">Explore Startups</Link>
-        </div>
-
-        <div className="feature-box">
-          <h3>📅 Upcoming Events & Hackathons</h3>
-          <p>Never miss an opportunity to network and grow.</p>
-          <Link href="#">View Events</Link>
-        </div>
-
-        <div className="feature-box">
-          <h3>🔔 Notification / Alert System</h3>
-          <p>Receive alerts about new courses, skills, and job matches.</p>
-          <button>Enable Notifications</button>
-        </div>
-
-        <div className="feature-box">
-          <h3>🏆 Gamified Learning</h3>
-          <p>Earn badges and climb levels as you learn new skills!</p>
-          <Link href="#">View Achievements</Link>
-        </div>
-
-        <div className="feature-box">
-          <h3>🧑‍🤝‍🧑 Community Forum</h3>
-          <p>Ask questions, share insights, and connect with fellow learners.</p>
-          <Link href="#">Join the Forum</Link>
-        </div>
-
-        <div className="feature-box">
-          <h3>📈 Learning Progress Tracker</h3>
-          <p>Track which topics you've mastered and what's next.</p>
-          <Link href="#">Track Progress</Link>
-        </div>
-
-        {/* New Features Added Below */}
-
-        <div className="feature-box">
-          <h3>🧩 Personalized Learning Paths</h3>
-          <p>Follow curated learning paths tailored to your goals.</p>
-          <Link href="#">Explore Paths</Link>
-        </div>
-
-        <div className="feature-box">
-          <h3>📝 AI Resume Builder</h3>
-          <p>Create a professional resume based on your skills and experience.</p>
-          <button>Build Resume</button>
-        </div>
-
-        <div className="feature-box">
-          <h3>📊 Job Match Analyzer</h3>
-          <p>Compare your skills with job listings to find the best matches.</p>
-          <Link href="#">Analyze Jobs</Link>
-        </div>
-      </section>
-
-      <section className="contact-section">
-        <h2>Contact Us</h2>
-        <form>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" required></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-
-      <footer className="footer">
-        &copy; 2025 SkillSync | Empowering AI Learners
-      </footer>
+      </div>
     </main>
   );
 }
-
-
-        
