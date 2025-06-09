@@ -1,41 +1,64 @@
-import React from 'react';
+ // app/page.tsx
 
-const SearchBox = () => {
-  return (
-    <div className="mb-6">
-      <input
-        type="text"
-        placeholder="Search skills or courses"
-        className="p-3 w-full border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-      />
-    </div>
-  );
-};
-
-const SkillCard = ({ skill, description }: { skill: string; description: string }) => {
-  return (
-    <div className="p-4 bg-white rounded-2xl shadow-md border hover:shadow-lg transition">
-      <h2 className="text-xl font-semibold">{skill}</h2>
-      <p className="text-gray-600">{description}</p>
-    </div>
-  );
-};
+import Authentication from "@/components/authentication";
+import Courses from "@/components/courses";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100 p-6 font-sans">
-      <header className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-blue-600">SkillSync</h1>
-        <p className="text-lg text-gray-600">Skill Mapping & Learning App</p>
-      </header>
+    <main>
+        <header className="header">
+          <div className="header-align">
+  <div className="header-left">
+    <a href="#">📊 Dashboard</a>
+  </div>
 
-      <div className="max-w-2xl mx-auto">
-        <SearchBox />
-        <div className="grid gap-4">
-          <SkillCard skill="React" description="A JavaScript library for building user interfaces." />
-          <SkillCard skill="Python" description="Popular language for AI, ML, and web development." />
-        </div>
-      </div>
+  <div className="header-center">
+    <h1>SkillSync</h1>
+    <p>Skill Mapping & Learning App</p>
+  </div>
+
+  <div className="header-right">
+    <a href="#">👤 Login</a>
+  </div>
+  </div>
+
+  <div className="search-box">
+  <input type="text" placeholder="🔍 Search apps or courses..." />
+  <button>Search</button>
+</div>
+</header>
+      <section className="main-section">
+        <h2>Welcome to SkillSync!</h2>
+        <p>
+          Identify your skill gaps and find the best learning resources to grow in the AI field.
+        </p>
+        <Image
+          src="/ai-learning.jpg"
+          alt="AI Learning"
+          width={800}
+          height={400}
+          className="banner-image"
+        />
+
+        {/* 👇 Components */}
+        <Authentication />
+        <Courses />
+      </section>
+
+      <section className="contact-section">
+        <h2>Contact Us</h2>
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <footer className="footer">
+        &copy; 2025 SkillSync | Empowering AI Learners
+      </footer>
     </main>
   );
 }
