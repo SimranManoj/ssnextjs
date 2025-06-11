@@ -1,33 +1,22 @@
- // app/page.tsx
+// app/page.tsx
 
 import Authentication from "@/components/authentication";
 import Courses from "@/components/courses";
 import Image from "next/image";
 
+
 export default function Home() {
   return (
     <main>
-        <header className="header">
-          <div className="header-align">
-  <div className="header-left">
-    <a href="#">📊 Dashboard</a>
-  </div>
+      <header className="header">
+        <h1>SkillSync</h1>
+        <p>Skill Mapping & Learning App</p>
+        <div className="search-box">
+          <input type="text" placeholder="🔍 Search apps or courses..." />
+          <button>Search</button>
+        </div>
+      </header>
 
-  <div className="header-center">
-    <h1>SkillSync</h1>
-    <p>Skill Mapping & Learning App</p>
-  </div>
-
-  <div className="header-right">
-    <a href="#">👤 Login</a>
-  </div>
-  </div>
-
-  <div className="search-box">
-  <input type="text" placeholder="🔍 Search apps or courses..." />
-  <button>Search</button>
-</div>
-</header>
       <section className="main-section">
         <h2>Welcome to SkillSync!</h2>
         <p>
