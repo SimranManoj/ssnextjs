@@ -17,7 +17,7 @@ body {
   padding: 20px 30px;
 }
 
-.header-align{
+.header-top{
    display: flex;
   justify-content: space-between;
   align-items: center;
