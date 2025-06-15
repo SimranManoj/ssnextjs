@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "@/app/utils/firebase";
+import CourseDetailAnalytics from "@/app/components/CourseDetailAnalytics";
 
 export default function CourseDetail() {
   const { id } = useParams();
@@ -36,6 +37,8 @@ export default function CourseDetail() {
 
   return (
     <main className="course-detail">
+      <CourseDetailAnalytics /> {/* Logs to Firebase Analytics */}
+
       <h2>{course.title}</h2>
       <p><strong>Description:</strong> {course.description}</p>
       <p><strong>Author:</strong> {course.author}</p>
