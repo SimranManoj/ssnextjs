@@ -1,40 +1,36 @@
 "use client";
-import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/app/utlis/firebase";
+import { useState, useEffect } from "react";
 
-export interface Course {
-  id: string;
-  title: string;
-  author: string;
-  amount: number;
-  views: number;
-  reviews: number;
-  likes: number;
-}
-
-export default function useCourses() {
-  const [courses, setCourses] = useState<Course[]>([]);
-  const [loading, setLoading] = useState(true);
+export default function useCourseCount() {
+  const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
-    const fetchCourses = async () => {
+    const fetchData = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "courses"));
-        const data: Course[] = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        })) as Course[];
-        setCourses(data);
+        const res = await fetch("/api/ai-suggestions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            level: "Beginner",
+            interest: "Machine Learning",
+          }),
+        });
+
+        const data = await res.json();
+        console.log("AI Course Suggestions:", data);
+        if (data.courses) {
+          setCount(data.courses.length);
+        } else {
+          setCount(0); // fallback if response is empty
+        }
       } catch (error) {
-        console.error("Error fetching courses:", error);
-      } finally {
-        setLoading(false);
+        console.error("Failed to fetch course count:", error);
+        setCount(0);
       }
     };
 
-    fetchCourses();
+    fetchData();
   }, []);
 
-  return { courses, loading };
+  return count;
 }
