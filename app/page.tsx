@@ -1,7 +1,8 @@
 // app/page.tsx
 
 // import Authentication from "@/components/authentication";
-import Courses from "@/components/courses";
+import Courses from "@/app/components/courses";
+import { Analytics } from '@vercel/analytics/react';
 // import Image from "next/image";
 
 
@@ -20,7 +21,7 @@ export default function Home() {
     </div>
 
     <div className="header-right">
-      <a href="#">👤 Login / Profile</a>
+      <a href="/login">👤 Login / Profile</a>
     </div>
   </div>
 
@@ -58,6 +59,8 @@ export default function Home() {
           <button type="submit">Submit</button>
         </form>
       </section>
+
+      <Analytics />
 
       <footer className="footer">
         &copy; 2025 SkillSync | Empowering AI Learners
