@@ -1,0 +1,52 @@
+[
+  {
+    "id": "course_001",
+    "title": "Full-Stack Web Development",
+    "author": "John Doe",
+    "description": "Learn to build complete web apps using HTML, CSS, JavaScript, React, and Node.js.",
+    "amount": 4999,
+    "views": 12000,
+    "reviews": 340,
+    "likes": 875
+  },
+  {
+    "id": "course_002",
+    "title": "Machine Learning with Python",
+    "author": "Jane Smith",
+    "description": "An in-depth course covering data science, algorithms, and real-world ML applications.",
+    "amount": 5999,
+    "views": 8900,
+    "reviews": 410,
+    "likes": 1120
+  },
+  {
+    "id": "course_003",
+    "title": "UI/UX Design Principles",
+    "author": "Alex Johnson",
+    "description": "Master the art of designing intuitive and engaging digital experiences.",
+    "amount": 3499,
+    "views": 7600,
+    "reviews": 298,
+    "likes": 965
+  },
+  {
+    "id": "course_004",
+    "title": "Cloud Computing Essentials",
+    "author": "Priya Kumar",
+    "description": "Understand cloud services, architecture, and AWS basics in this beginner-friendly course.",
+    "amount": 4499,
+    "views": 10200,
+    "reviews": 320,
+    "likes": 1032
+  },
+  {
+    "id": "course_005",
+    "title": "Cybersecurity for Beginners",
+    "author": "Ravi Mehta",
+    "description": "Protect networks, prevent attacks, and learn ethical hacking fundamentals.",
+    "amount": 3999,
+    "views": 6700,
+    "reviews": 215,
+    "likes": 780
+  }
+]

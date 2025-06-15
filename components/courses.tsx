@@ -1,31 +1,28 @@
 "use client";
 
-import useCourseCount from "@/hook/useCourseCount";
+import useCourses from "@/hook/useCourseCount";
+ // 🔄 fix incorrect import
 import Link from "next/link";
 
-
 export default function Courses() {
-  const courseCount = useCourseCount();
+  const { courses, loading } = useCourses();
 
   return (
-    <>
-      <div className="feature-box">
-        <h3>🧠 Skill Gap Analyzer</h3>
-        <p>Take our quiz to identify where you need to improve.</p>
-        <Link href="#">Start Quiz</Link>
-      </div>
-
-      <div className="feature-box">
-        <h3>🤖 AI-Powered Course Recommendation</h3>
-        <p>
-          {courseCount !== null
-            ? `We found ${courseCount} personalized courses for you!`
-            : "Loading course recommendations..."}
-        </p>
-        <button>View Recommendations</button>
-      </div>
-
-      {/* Add rest of the components here... */}
-    </>
+    <div className="courses-list">
+      {loading ? (
+        <p>Loading courses...</p>
+      ) : (
+        courses.map((course) => (
+          <Link href={`/course/${course.id}`} key={course.id}>
+            <div className="course-card">
+              <h4>{course.title}</h4>
+              <p>By: {course.author}</p>
+              <p>₹{course.amount}</p>
+              <p>👁️ {course.views} | ⭐ {course.reviews} | ❤️ {course.likes}</p>
+            </div>
+          </Link>
+        ))
+      )}
+    </div>
   );
 }

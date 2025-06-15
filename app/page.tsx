@@ -20,7 +20,7 @@ export default function Home() {
     </div>
 
     <div className="header-right">
-      <a href="#">👤 Login / Profile</a>
+      <a href="/login">👤 Login / Profile</a>
     </div>
   </div>
 
